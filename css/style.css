@@ -1,32 +1,32 @@
 /* RESET CSS */
 
-*, /* 00 */
-*::after, /* 01 */
-*::before { /* 01 */
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
+*,
+*::after,
+*::before {
+    box-sizing: border-box; /* указываем для изменения алгоритма подсчета ширины и высоты элементов */
+    margin: 0; /* убирает внешние отступы */
+    padding: 0; /* убирает внутренние отступы */
+    border: 0; /* убирает границы */
     /* outline: 1px solid firebrick; */
 }
 
-html { /* 01 */
-    font-size: 16px;
+html {
+    font-size: 16px; /* дефолтный размер текста */
 }
 
-body { /* 01 */
-    font-size: 1rem;
-    line-height: 1;
-    background-color: #e9ff94;
+body {
+    font-size: 1rem; /* дефолтный размер текста */
+    line-height: 1; /* высота строки */
+    background-color: #e9ff94; /* цвет заднего фона всей страницы */
 }
 
-ol, ul { /* 01 */
-    list-style: none;
+ol, ul {
+    list-style: none; /* убирает оформление списков */
 }
 
 a {
-    text-decoration: none;
-    color: #003600;
+    text-decoration: none; /* убирает нижнее подчеркивание у ссылок */
+    color: #003600; /* цвет текста ссылок */
 }
 
 /* HEADER */
@@ -34,104 +34,104 @@ a {
 .header,
 .logo,
 .menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex; /* делает элементы внутри блока гибкими */
+    justify-content: space-around; /* равномерно распределяет элементы внутри блока, у всех одинаковое пространство */
+    align-items: center; /* выравнивание элементов по центру вдоль оси */
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: #327b81;
+    position: fixed; /* положение блока зафиксировано */
+    top: 0; /* позиция хедера зафиксирована вверху браузера без отступов */
+    right: 0; /* позиция хедера зафиксирована к правой стороне браузера без отступов */
+    left: 0; /* позиция хедера зафиксирована к левой стороне браузера без отступов */
+    background-color: #327b81; /* цвет заднего фона */
 }
 
 .logo {
-    width: 40%;
-    justify-content: center;
+    width: 40%; /* ширина логотипа */
+    justify-content: center; /* выравнивание элементов по центру */
 }
 
 .logo__picture-wrap {
-    width: 20%;
+    width: 20%; /* ширина блока картинки */
 }
 
 .logo__picture {
-    width: 100%;
-    min-width: 60%;
+    width: 100%; /* указываем ширину картинки чтоб она была на всю ширину блока */
+    min-width: 60%; /* минимальная ширина картинки */
 }
 
 .menu-wrap {
-    width: 60%;
+    width: 60%; /* ширина блока меню */
 }
 
 .menu__item {
-    position: relative;
+    position: relative; /* сдвигает элемент относительно его обычного положения */
 }
 
 .menu__link,
 .categoria__link,
 .submenu__link {
-    white-space: nowrap;
-    display: inline-block;
-    padding: 10px;
-    background-color: #f7c383;
-    transition: 2s all;
+    white-space: nowrap; /* убирает перенос слов на новую строку */
+    display: inline-block; /* єлементі отображаются как строчно блочные */
+    padding: 10px; /* внутренний отступ */
+    background-color: #f7c383; /* задний фон ссылок */
+    transition: 2s all; /* задержка для потухания цвета который зададим в ховер */
     border-radius: 50% 20% / 10% 40%; /* углы рамки скруглены по радиусу */
-    z-index: 1;
+    z-index: 1; /* приоритетный индекс благодаря которому элементы будут поверх всего */
 }
 
 .menu__link:hover,
 .categoria__link:hover,
 .submenu__link:hover {
-    background-color: #ff5b0f;
-    transition: 1s all;
+    background-color: #ff5b0f; /* при наведении цвет заднего фона меняется */
+    transition: 1s all; /* время изменения заднего фона */
 }
 
 .categoria__link:hover::after {
-    content: "+";
+    content: "+"; /* добавляет в конце указанных эдементов текст при наведении */
 }
 
 .categoria,
 .submenu {
-    display: none;
-    position: absolute;
+    display: none; /* скрывает элемент пока на него не наведут мышку */
+    position: absolute; /* элемент исчезает с того места где он должен быть и позиционируется заново */
 }
 
 .menu__item:hover .categoria {
-    display: block;
+    display: block; /* элемент отображается под менюшкой */
 }
 
 .categoria__item:hover .submenu {
-    display: inline-block;
+    display: inline-block; /* элемент отображается рядом с категориями */
 }
 
 /* SECTION */
 
 .main {
-    margin-top: 10%;
+    margin-top: 10%; /* верхний отступ для мейна чтоб он не прятался под хедер */
 }
 
 [class$="title"] {
-    text-align: center;
-    padding: 8px 2%;
+    text-align: center; /* все элементы с указанным окончанием в классах по центру*/
+    padding: 8px 2%; /* все элементы с указанным окончанием в классах имеют указанный внутренний отступ */
 }
 
 p[class$="item"] {
-    padding: 1% 2%;
-    font-size: 1.2rem;
-    text-indent: 3rem;
+    padding: 1% 2%; /* все элементы с указанным окончанием в классах в теге р имеют внутренний отступ*/
+    font-size: 1.2rem; /* размер текста всех элементов с указанным окончанием в классах в теге р*/
+    text-indent: 3rem; /* абзац (отступ) текста всех элементов с указанным окончанием в классах в теге р*/
 }
 
 .main__section--special {
-    margin-bottom: 4%;
+    margin-bottom: 4%; /* нижний отступ для спец блока мейна чтоб он не прятался под футер */
 }
 
 /* FOOTER */
 
 .footer { /* 10 */
-    width: 100%;
-    padding: 1% 0;
+    width: 100%; /* указываем ширину блока чтоб он был на всю ширину браузера */
+    padding: 1% 0; /* внутренний отступ */
     position: fixed; /* позиция футера зафиксирована вне зависимости от скрола */
     bottom: 0; /* позиция футера зафиксирована внизу браузера буз отступов */
     background-color: #f7c383; /* задний фон блока для правильного и красивого просмотра футера */
