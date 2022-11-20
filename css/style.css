@@ -1,0 +1,143 @@
+/* RESET CSS */
+
+*, /* 00 */
+*::after, /* 01 */
+*::before { /* 01 */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* outline: 1px solid firebrick; */
+}
+
+html { /* 01 */
+    font-size: 16px;
+}
+
+body { /* 01 */
+    font-size: 1rem;
+    line-height: 1;
+    background-color: #e9ff94;
+}
+
+ol, ul { /* 01 */
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #003600;
+}
+
+/* HEADER */
+
+.header,
+.logo,
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #327b81;
+}
+
+.logo {
+    width: 40%;
+    justify-content: center;
+}
+
+.logo__picture-wrap {
+    width: 20%;
+}
+
+.logo__picture {
+    width: 100%;
+    min-width: 60%;
+}
+
+.menu-wrap {
+    width: 60%;
+}
+
+.menu__item {
+    position: relative;
+}
+
+.menu__link,
+.categoria__link,
+.submenu__link {
+    white-space: nowrap;
+    display: inline-block;
+    padding: 10px;
+    background-color: #f7c383;
+    transition: 2s all;
+    border-radius: 50% 20% / 10% 40%; /* углы рамки скруглены по радиусу */
+    z-index: 1;
+}
+
+.menu__link:hover,
+.categoria__link:hover,
+.submenu__link:hover {
+    background-color: #ff5b0f;
+    transition: 1s all;
+}
+
+.categoria__link:hover::after {
+    content: "+";
+}
+
+.categoria,
+.submenu {
+    display: none;
+    position: absolute;
+}
+
+.menu__item:hover .categoria {
+    display: block;
+}
+
+.categoria__item:hover .submenu {
+    display: inline-block;
+}
+
+/* SECTION */
+
+.main {
+    margin-top: 10%;
+}
+
+[class$="title"] {
+    text-align: center;
+    padding: 8px 2%;
+}
+
+p[class$="item"] {
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    text-indent: 3rem;
+}
+
+.main__section--special {
+    margin-bottom: 4%;
+}
+
+/* FOOTER */
+
+.footer { /* 10 */
+    width: 100%;
+    padding: 1% 0;
+    position: fixed; /* позиция футера зафиксирована вне зависимости от скрола */
+    bottom: 0; /* позиция футера зафиксирована внизу браузера буз отступов */
+    background-color: #f7c383; /* задний фон блока для правильного и красивого просмотра футера */
+    text-align: center; /* текст по центру блока */
+}
+
+.footer__text {
+    color: #327b81 ;
+}
