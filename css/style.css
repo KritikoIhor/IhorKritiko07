@@ -32,8 +32,7 @@ a {
 /* HEADER */
 
 .header,
-.logo,
-.menu {
+.logo {
     display: flex; /* делает элементы внутри блока гибкими */
     justify-content: space-around; /* равномерно распределяет элементы внутри блока, у всех одинаковое пространство */
     align-items: center; /* выравнивание элементов по центру вдоль оси */
@@ -70,8 +69,42 @@ a {
     width: 60%; /* ширина блока меню */
 }
 
+.menu {
+    font-size: 0;  /* скрываем родителя */
+}
+
 .menu__item {
-    position: relative; /* сдвигает элемент относительно его обычного положения */
+    display: inline-block;  /* отображаем элементы как блочно строчные */
+    padding: 5px 10px; /* внутренний отступ элементов */
+    margin: 0 30px; /* внешний отступ элементов */
+    font-size: 15px; /* возвращаем элементы внутри родителя в нормальное состояние */
+}
+
+.categoria,
+.submenu {
+    display: none; /* скрывает элемент пока на него не наведут мышку */
+    position: absolute; /* элемент исчезает с того места где он должен быть и позиционируется заново */
+}
+
+.menu__link:hover,
+.categoria__link:hover,
+.submenu__link:hover {
+    display: inline-block;
+    background-color: #ff5b0f; /* при наведении цвет заднего фона меняется */
+    transition: 1s all; /* время изменения заднего фона */
+    text-decoration: underline; /* при наведении ссылка подчеркивается */
+}
+
+.menu__item:hover .categoria {
+    display: block; /* элемент отображается под менюшкой */
+}
+
+.categoria__item:hover .submenu {
+    display: inline-block; /* элемент отображается рядом с категориями */
+}
+
+.categoria__link:hover::after {
+    content: "+"; /* добавляет в конце указанных элементов текст при наведении */
 }
 
 .menu__link,
@@ -85,32 +118,6 @@ a {
     border-radius: 50% 20% / 10% 40%; /* углы рамки скруглены по радиусу */
     font-weight: bold; /* жирный текст */
     z-index: 1; /* приоритетный индекс благодаря которому элементы будут поверх всего */
-}
-
-.menu__link:hover,
-.categoria__link:hover,
-.submenu__link:hover {
-    background-color: #ff5b0f; /* при наведении цвет заднего фона меняется */
-    transition: 1s all; /* время изменения заднего фона */
-    text-decoration: underline; /* при наведении ссылка подчеркивается */
-}
-
-.categoria__link:hover::after {
-    content: "+"; /* добавляет в конце указанных элементов текст при наведении */
-}
-
-.categoria,
-.submenu {
-    display: none; /* скрывает элемент пока на него не наведут мышку */
-    position: absolute; /* элемент исчезает с того места где он должен быть и позиционируется заново */
-}
-
-.menu__item:hover .categoria {
-    display: block; /* элемент отображается под менюшкой */
-}
-
-.categoria__item:hover .submenu {
-    display: inline-block; /* элемент отображается рядом с категориями */
 }
 
 /* SECTION */
